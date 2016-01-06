@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CWISoftware/lightweight/issues",
     "email": "lightweight@cwi.com.br"
+  },
+  "dependencies": {
+    "jquery": "~2.1.4"
   }
 }
