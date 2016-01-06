@@ -9,10 +9,11 @@ The most lightweight responsive front-end framework on the web.
 
 ## Usage
 
-If you want to contribute to ** lightweight ** or run it from source, clone this repository to your machine:
-
+If you want to contribute to **lightweight** or run it from source, clone this repository to your machine:
+```bash
   $ git clone git@github.com:CWISoftware/lightweight.git
-  cd lightweight
+  $ cd lightweight
+```
 
 ## What's included
 
@@ -34,10 +35,10 @@ We provide compiled CSS and JS (`lightweight.*`), as well as compiled and minifi
 
 ## Contributing
 
-We appreciate any contribution to ** lightweight **, so check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide for information. We usually keep a list of features and bugs [in the issue tracker](http://github.com/CWISoftware/lightweight/issues).
+We appreciate any contribution to **lightweight**, so check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide for information. We usually keep a list of features and bugs [in the issue tracker](http://github.com/CWISoftware/lightweight/issues).
 
 ## License
 
-** lightweight ** source code is released under MIT License.
+**lightweight** source code is released under MIT License.
 
 Check [LICENSE](LICENSE) files for more information.
