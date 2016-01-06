@@ -1,0 +1,20 @@
+{
+  "name": "lightweight",
+  "version": "0.0.1",
+  "main": [
+    "dist/lightweight.css",
+    "dist/lightweight.js"
+  ],
+  "description": "The most lightweight responsive front-end framework on the web.",
+  "author": "CWI <cwi@cwi.com.br> (http://www.cwi.com.br)",
+  "homepage": "http://lightweight.cwi.com.br",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CWISoftware/lightweight"
+  },
+  "bugs": {
+    "url": "https://github.com/CWISoftware/lightweight/issues",
+    "email": "lightweight@cwi.com.br"
+  }
+}
