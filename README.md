@@ -28,7 +28,7 @@ lightweight/
 │   └── lightweight.min.css.map
 └── js/
     ├── lightweight.js
-        └── lightweight.min.js
+    └── lightweight.min.js
 ```
 
 We provide compiled CSS and JS (`lightweight.*`), as well as compiled and minified CSS and JS (`lightweight.min.*`). CSS [source maps](https://developer.chrome.com/devtools/docs/css-preprocessors) (`lightweight.*.map`) are available for use with certain browsers' developer tools.
