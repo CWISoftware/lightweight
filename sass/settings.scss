@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+$color-default-card-placeholder: #ff3b7f;
+
+// COLORS ----------------------------------------------------------------------
+// $color-shadow	rgba($black, .125)
+$color-primary: #4b5e6d;
+// $color-accent	$patina
+$color-background: #eee;
+$color-background-card: #fff;
+$color-background-heading: #2d2d2d;
+// $color-background-invert	$hopbush
+
+$color-text: #4b5e6d;
+// $color-text-weak	$regent-grey
+$color-text-strong: #33414d;
+// $color-text-heading	$regent-grey
+
+$color-text-invert: rgba($color-background, .75);
+$color-text-strong-invert: $color-background;
+
+$color-text-link: #273947;
+// $color-text-link-visited	$bouquet
+// $color-text-link-hover	$midnight-blue
+// $color-border
+
+$color-call-for-action: #0094c6;
+$color-overlay: rgba(0, 0, 0, .6);
+$color-autofill-input: #25261b;
+
+// GRID ------------------------------------------------------------------------
+$grid-gutter: 2%;
+$grid-columns: 12;
+
+// SPACING ---------------------------------------------------------------------
+$spacing: 16px;

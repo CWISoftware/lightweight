@@ -1,0 +1,87 @@
+@charset 'utf-8';
+
+.card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-bottom: $spacing;
+  border-radius: 6px;
+  background-color: $color-background-card;
+}
+
+.card__title {
+  position: relative;
+  overflow: hidden;
+  min-height: 180px; //TODO: think about this
+  padding: $spacing;
+  background-color: $color-text-invert;
+
+  .avatar { // Interaction with avatar component
+    width: 65%;
+    height: 65%;
+    padding-bottom: 65%;
+  }
+}
+
+.card__title-background {
+  @include prefix(filter,
+                  blur(5px) grayscale(80%),
+                  ('moz', 'ms', 'webkit'));
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  transform: scale(1.6);
+}
+
+.card__menu {
+  position: absolute;
+  top: $spacing;
+  right: $spacing;
+  overflow: hidden;
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    float: left;
+    padding: $spacing / 4;
+  }
+}
+
+.card__content {
+  overflow: hidden;
+  padding: $spacing;
+}
+
+.extra-info {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    padding: $spacing / 4;
+    background-color: $color-background-card;
+    text-align: center;
+  }
+
+  li:not(:first-child) {
+    border-left: 1px solid $color-background;
+  }
+}
+
+.extra-info__value {
+  display: block;
+  font-size: 2.8rem;
+}
+
+.extra-info__label {
+  display: block;
+}

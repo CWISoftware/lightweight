@@ -1,0 +1,15 @@
+@charset 'utf-8';
+
+.social-networks {
+  @include clearfix;
+}
+
+.social-link {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 0 $spacing / 4 $spacing / 4;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: $color-text;
+}

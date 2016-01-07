@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+@mixin gutter {
+  margin-left: $grid-gutter;
+}
+
+@mixin column($column) {
+  $internal-gutters: $grid-gutter * ($column - 1);
+  width: $internal-gutters + (100% - $grid-gutter * ($grid-columns - 1)) / $grid-columns * $column;
+  float: left;
+};

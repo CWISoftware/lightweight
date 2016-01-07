@@ -1,0 +1,54 @@
+.checkbox-toggle {
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox + &__label {
+    @include prefix(user-select, none, ('moz', 'ms', 'webkit'));
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 45px;
+    height: 24px;
+    padding: 2px;
+    border: 1px solid $color-background-card;
+    border-radius: 16px;
+    color: transparent;
+    background-color: transparent;
+    transition: background .4s, border-color .4s;
+    user-select: none;
+    vertical-align: middle;
+  }
+
+  &__checkbox + &__label::after {
+    position: absolute;
+    display: block;
+    content: '';
+  }
+
+  &__checkbox + &__label::after {
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    width: 18px;
+    border-radius: 52px;
+    background-color: $color-background-card;
+    transition: margin .4s, background .4s;
+  }
+
+  &__checkbox:checked + &__label {
+    border-color: $color-call-for-action;
+    background-color: $color-call-for-action;
+  }
+
+  &__checkbox:checked + &__label::after {
+    margin-left: 21px;
+  }
+
+  &__label-text {
+    margin-left: 21px;
+    line-height: 24px;
+  }
+}
