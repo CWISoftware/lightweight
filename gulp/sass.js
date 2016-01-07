@@ -5,13 +5,14 @@ var common = require('./common.js');
  * unify and minify all sass.
  */
 common.gulp.task('sass', function() {
-  var stream = common.gulp.src(common.dirs.sass.path)
-    .pipe(common.gulp_sass({
-      includePaths: [
-        common.dirs.bower
-      ],
-      errLogToConsole: true
-    }));
+  var stream = common.gulp_sass('./sass/lightweight.scss', {
+    compass: true,
+    bundleExec: true,
+    sourcemap: true,
+    loadPath: [
+      './bower_components/normalize-scss/'
+    ]
+  });
 
   stream
     .pipe(common.gulp_flatten())
