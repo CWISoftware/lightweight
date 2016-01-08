@@ -1,87 +1,155 @@
 @charset 'utf-8';
 
-.card {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin-bottom: $spacing;
-  border-radius: 6px;
-  background-color: $color-background-card;
-}
+@include respond-above('medium') {
+  .card-grid-pager {
+    @include column(12);
+    margin: 30px 0 80px 0;
+    display: none;
 
-.card__title {
-  position: relative;
-  overflow: hidden;
-  min-height: 180px; //TODO: think about this
-  padding: $spacing;
-  background-color: $color-text-invert;
+    a {
+      width: 120px;
+      height: 120px;
+      font-size: 1.8rem;
+      color: #fff; 
+      line-height: 2.4rem;
+      text-align: center;
+      text-transform: uppercase;
+      background: #005e7c;
+      border-radius: 60px;
+      margin: 0 auto;
+      position: relative;
+      cursor: pointer;
+      display: block;
 
-  .avatar { // Interaction with avatar component
-    width: 65%;
-    height: 65%;
-    padding-bottom: 65%;
+      span {
+        left: 0;
+        top: 50%;
+        margin-top: -20px;
+        position: absolute;
+      }
+    }
   }
-}
+  
+  .card {
+    @include column(3);
+    margin: 20px 0.75% 0;
+    border-radius: 4px;
+    background: #fff;
 
-.card__title-background {
-  @include prefix(filter,
-                  blur(5px) grayscale(80%),
-                  ('moz', 'ms', 'webkit'));
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-size: cover;
-  transform: scale(1.6);
-}
+    &__path {
+      height: 40px;
+      font-size: 1.0rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      color: #0094c6;
+      padding: 10px 0 0 10px;
+    }
 
-.card__menu {
-  position: absolute;
-  top: $spacing;
-  right: $spacing;
-  overflow: hidden;
-  margin: 0;
-  list-style: none;
+    &__container {
+      height: 100%;
+      padding: 0 20px;
+      border-bottom: 1px solid #005e76;
 
-  li {
-    display: inline-block;
-    float: left;
-    padding: $spacing / 4;
+      &__avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        -webkit-border-radius: 75px;
+        -moz-border-radius: 75px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      &__title {
+        width: 100%;
+        font-size: 1.8rem;
+        color: #0094c6;
+        line-height: 2.4rem;
+        text-align: center;
+        margin: 20px 0 0 0;
+        display: block;
+      }
+
+      &__subtitle {
+        width: 100%;
+        font-size: 1.1rem;
+        color: #999;
+        line-height: 1.4rem;
+        text-align: center;
+        margin: 2px 0 18px;
+        display: block;
+      }
+
+      &__information {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 30px;
+        list-style-type: none;
+        display: block;
+
+        li {
+          height: 18px;
+          margin-bottom: 10px;
+          display: block;
+        }
+
+        img {
+          margin: 2px 6px 0 0;
+          float: left;
+        }
+
+        &__label {
+          font-size: 1.2rem;
+          color: #999;
+          line-height: 1.8rem;
+          float: left;
+        }
+      }
+    }
+
+    &__statistic {
+      height: 45px;
+      padding: 0 20px;
+      display: block;
+
+      &__container {
+        height: 100%;
+        margin-right: 10px;
+        float: left;
+
+        img {
+          width: 12px;
+          height: 12px;
+          margin: 16px 5px 0 0;
+          cursor: pointer;
+          float: left;
+        }
+
+        &__label {
+          font-size: 1.2rem;
+          color: #005e76;
+          line-height: 4.5rem;
+          float: left;
+        }
+      }
+    }
+
+    &--6 {
+      @include column(6);
+      margin-left: 0.75%;
+      margin-right: 0.75%;
+    }
+
+    &--9 {
+      @include column(9);
+      margin-left: 0.75%;
+      margin-right: 0.75%;
+    }
+    
+    &--12 {
+      @include column(12);
+      margin-left: 0.75%;
+      margin-right: 0.75%;
+    }
   }
-}
-
-.card__content {
-  overflow: hidden;
-  padding: $spacing;
-}
-
-.extra-info {
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: inline-block;
-    float: left;
-    width: 100px;
-    padding: $spacing / 4;
-    background-color: $color-background-card;
-    text-align: center;
-  }
-
-  li:not(:first-child) {
-    border-left: 1px solid $color-background;
-  }
-}
-
-.extra-info__value {
-  display: block;
-  font-size: 2.8rem;
-}
-
-.extra-info__label {
-  display: block;
 }

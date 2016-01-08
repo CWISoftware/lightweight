@@ -1,32 +1,60 @@
 @charset 'utf-8';
 
 .navbar {
-  overflow: hidden;
-  padding: 0 $spacing;
-  color: $color-text-strong-invert;
-  background-color: $color-background-heading;
+  height: $navbar-height;
+  color: $navbar-color;
+  background-color: $navbar-background-color;
 
   a {
-    color: $color-text-strong-invert;
+    color: $navbar-a-color;
   }
 
   ul {
     margin: 0;
+    padding: 0;
     list-style: none;
   }
-}
 
-.navbar__title {
-  float: left;
-  margin: 0;
-
-  h1 {
+  &__brand {
+    height: 50px;
     margin: 0;
-    font-size: 1.8rem;
-    line-height: 1.8rem * 1.5;
-  }
-}
+    display: block;
+    float: left;
 
-.navbar__options {
-  float: right;
+    a {
+      height: 100%;
+      display: block;
+    
+      &:before {
+        content: ' ';
+        height: 100%;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      img {
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__container {
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    display: block;
+
+    li {
+      height: 100%;
+      position: relative;
+      float: left;
+    }
+
+    &--right {
+      float: right;
+    }
+  }
 }

@@ -1,0 +1,8 @@
+@charset 'utf-8';
+
+.geometry {
+  &--circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+}
