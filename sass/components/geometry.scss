@@ -1,8 +1,28 @@
 @charset 'utf-8';
 
+/*
+ * Responsible component to modify element geometry.
+ *
+ * @class:
+ * - .geometry--circle
+ * - .geometry--rounded
+ * - .geometry--framed
+ */
+
 .geometry {
   &--circle {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
+  }
+
+  &--rounded {
+    border-radius: $geometry-border-radius;
+  }
+
+  &--framed {
+    padding: $geometry-framed-padding;
+    background-color: $geometry-background-color;
+    border: $geometry-border $geometry-border-type $geometry-border-color;
+    border-radius: $geometry-border-radius;
   }
 }
