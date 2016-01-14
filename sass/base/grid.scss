@@ -1,11 +1,204 @@
 @charset 'utf-8';
 
-@mixin gutter {
-  margin-left: $grid-gutter;
+/*
+ * Variable $grid-breakpoints
+ *
+ * Define the minimum dimension at which your layout will change,
+ * addapting to different screen sizes, for use in media queries.
+ *
+ */
+$grid-breakpoints: (
+  // extra small screen / phone
+  'x-small':  0,
+  // small screen / phone
+  'small':    544px,
+  // medium screen / tablet
+  'medium':   768px,
+  // large screen / desktop
+  'large':    992px,
+  // extra large screen / wide desktop
+  'x-large':  1200px
+) !default;
+
+/*
+ * Variable $grid-container-max-widths
+ *
+ * Define the max-width of .container for different screen sizes.
+ *
+ */
+$grid-container-max-widths: (
+  'small': 576px,
+  'medium': 720px,
+  'large': 940px,
+  'x-large': 1140px
+) !default;
+
+/*
+ * Function breakpoint
+ *
+ * Returns $grid-breakpoint min-width from screen size.
+ *
+ */
+@function breakpoint($breakpoint-name) {
+  $breakpoint-value: map-get($grid-breakpoints, $breakpoint-name);
+
+  @if $breakpoint-value {
+    @return $breakpoint-value;
+  }
+
+  @warn "Breakpoint '#{$breakpoint-name}' not found in $breakpoints";
 }
 
-@mixin column($column) {
-  $internal-gutters: $grid-gutter * ($column - 1);
-  width: $internal-gutters + (100% - $grid-gutter * ($grid-columns - 1)) / $grid-columns * $column;
+/*
+ * Mixin respond-below
+ *
+ * Generate media query around element with screen size.
+ *
+ */
+@mixin respond-below($breakpoint-name) {
+  $breakpoint-value: breakpoint($breakpoint-name);
+
+  @if $breakpoint-value {
+    @media screen and (max-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+/*
+ * Mixin respond-above
+ *
+ * Generate media query around element with screen size.
+ *
+ */
+@mixin respond-above($breakpoint-name) {
+  $breakpoint-value: breakpoint($breakpoint-name);
+
+  @if $breakpoint-value {
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+/*
+ * Mixin make-grid-container
+ *
+ * Build .container center aligned with gutter.
+ *
+ */
+@mixin make-grid-container($gutter: $grid-gutter) {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix();
+}
+
+/*
+ * Mixin make-grid-container-max-width
+ *
+ *
+ *
+ */
+@mixin make-grid-container-max-width($max-widths: $grid-container-max-widths) {
+  @each $breakpoint, $grid-container-max-width in $max-widths {
+    @include respond-above($breakpoint) {
+      max-width: $grid-container-max-width;
+    }
+  }
+}
+
+/*
+ * Mixin make-grid-row
+ *
+ * Build .row with full width without gutter.
+ *
+ */
+@mixin make-grid-row($gutter: $grid-gutter) {
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  @include clearfix();
+}
+
+/*
+ * Mixin make-grid-column
+ *
+ * Build properties to column with width calculated by grid.
+ *
+ */
+@mixin make-grid-column($size, $columns: $grid-columns, $gutter: $grid-gutter) {
+  width: percentage($size / $columns);
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  position: relative;
   float: left;
-};
+}
+
+/*
+ * Mixin make-grid-column-offset
+ *
+ * Build properties to offset column with margin calculated by grid.
+ *
+ */
+@mixin make-grid-column-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+/*
+ * Mixin make-grid-classes
+ *
+ * Iterates over breakpoints, and call responsible mixins to create column classes and offset classes.
+ *
+ */
+@mixin make-grid-classes($columns: $grid-columns, $gutter: $grid-gutter, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    @include respond-above($breakpoint) {
+      @for $i from 1 through $columns {
+        .col-#{$breakpoint}-#{$i} {
+          @include make-grid-column($i);
+        }
+
+        @if $i > 0 and $i < $columns {
+          .col-#{$breakpoint}-offset-#{$i} {
+            @include make-grid-column-offset($i);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * class 
+  - .container
+ */
+.container {
+  @include make-grid-container();
+  @include make-grid-container-max-width();
+}
+
+/*
+ * class 
+  - .row
+ */
+.row {
+  @include make-grid-row();
+}
+
+/*
+ * classs 
+  - .col-x-small-1..12
+  - .col-small-1..12 
+  - .col-medium-1..12
+  - .col-large-1..12
+  - .col-x-large-1..12
+  - .col-x-small-offset-1..12
+  - .col-small-offset-1..12
+  - .col-medium-offset-1..12
+  - .col-large-offset-1..12
+  - .col-x-large-offset-1..12
+ */
+@include make-grid-classes();
