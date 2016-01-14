@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-.arrow {
+@mixin arrow() {
   width: 0; 
   height: 0; 
   border-left: 5px solid transparent;
@@ -9,20 +9,43 @@
   border-bottom: 5px solid transparent;
   vertical-align: middle;
   display: inline-block;
+}
 
+@mixin arrow-up($color: $arrow-border-bottom-color) {
+  @include arrow();
+  border-bottom: 5px solid $color;
+}
+
+@mixin arrow-down($color: $arrow-border-top-color) {
+  @include arrow();
+  border-top: 5px solid $color;
+}
+
+@mixin arrow-left($color: $arrow-border-right-color) {
+  @include arrow();
+  border-right: 5px solid $color;
+}
+
+@mixin arrow-right($color: $arrow-border-left-color) {
+  @include arrow();
+  border-left: 5px solid $color;
+}
+
+.arrow {
   &--up {
-    border-bottom: 5px solid #000;
+    @include arrow-up();
   }
 
   &--down {
-    border-top: 5px solid #000;
+    @include arrow-down();
   }
 
   &--left {
-    border-right: 5px solid #000;
+    @include arrow-left();
   }
 
   &--right {
-    border-left: 5px solid #000;
+    @include arrow-right();
   }
 }
+
