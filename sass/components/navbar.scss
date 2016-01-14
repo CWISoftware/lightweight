@@ -1,33 +1,73 @@
 @charset 'utf-8';
 
 .navbar {
-  height: $navbar-height;
-  color: $navbar-color;
+  min-height: $navbar-height;
+  color: $navbar-font-color;
   background-color: $navbar-background-color;
+  @include clearfix();
 
-  a {
-    color: $navbar-a-color;
+  .container {
+    min-height: inherit;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  &--fixed-top,
+  &--fixed-bottom {
+    left: 0;
+    right: 0;
+    z-index: $navbar-fixed-zindex;
+    position: fixed;
+  }
+
+  &--fixed-top {
+    top: 0;
+  }
+
+  &--fixed-bottom {
+    bottom: 0;
+  }
+
+  &__header {
+    min-height: inherit;
+    float: left;
+  }
+
+  @include respond-below('medium') {
+    &__header {
+      display: block;
+      float: none;
+    }
+  }
+
+  &__toggler {
+    min-height: inherit;
+    background: none;
+    border: 0;
+    position: relative;
+    float: right;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  @include respond-above('medium') {
+    &__toggler {
+      display: none;
+    }
   }
 
   &__brand {
-    height: 50px;
-    margin: 0;
-    display: block;
+    min-height: inherit;
     float: left;
+    display: inline-block;
 
-    a {
-      height: 100%;
-      display: block;
-    
+    > a {
+      min-height: inherit;
+      display: inline-block;
+
       &:before {
         content: ' ';
-        height: 100%;
+        min-height: inherit;
         vertical-align: middle;
         display: inline-block;
       }
@@ -40,21 +80,57 @@
   }
 
   &__container {
-    height: 50px;
+    min-height: inherit;
     margin: 0;
     padding: 0;
     list-style: none;
+    border-top: 1px solid transparent;
+    position: relative;
     float: left;
-    display: block;
 
-    li {
-      height: 100%;
-      position: relative;
-      float: left;
+    > li {
+      min-width: 100%;
+      min-height: inherit;
+      padding: 0 10px;
+      display: inline-block;
+
+      > a {
+        min-height: inherit;
+        padding: 0 10px;
+
+        &:before {
+          content: ' ';
+          min-height: inherit;
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        img {
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
     }
 
     &--right {
       float: right;
+    }
+  }
+    
+  @include respond-below('medium') {
+    &__container {
+      border-color: #1d1d1d;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+      margin-left: -15px;
+      margin-right: -15px;
+      display: none;
+      float: none !important;
+    }
+  }
+
+  @include respond-above('medium') {
+    &__container {
+      display: block !important;
     }
   }
 }
