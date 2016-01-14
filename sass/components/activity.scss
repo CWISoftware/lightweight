@@ -50,7 +50,7 @@
 }
 
 .activity-item__left {
-  @include column(2);
+  //@include column(2);
 
   .avatar { // Interaction with avatar component
     width: 65%;
@@ -59,5 +59,5 @@
 }
 
 .activity-item__content {
-  @include column(10);
+  //@include column(10);
 }
