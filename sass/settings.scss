@@ -29,15 +29,31 @@ $color-overlay: rgba(0, 0, 0, .6);
 $color-autofill-input: #25261b;
 
 // GRID ------------------------------------------------------------------------
-$grid-gutter: 2%;
+$grid-gutter: 30px;
 $grid-columns: 12;
 
 // SPACING ---------------------------------------------------------------------
 $spacing: 16px;
 
-// NAVBAR ---------------------------------------------------------------------
+// NAVBAR ----------------------------------------------------------------------
 $navbar-height: 50px;
-$navbar-color: #fff;
-$navbar-background-color: #000;
+$navbar-font-color: #fff;
+$navbar-background-color: #2d2d2d;
+$navbar-fixed-zindex: 9000;
+
 // a
-$navbar-a-color: $navbar-color;
+$navbar-a-font-color: $navbar-font-color;
+
+// GEOMETRY --------------------------------------------------------------------
+$geometry-background-color: #fff;
+$geometry-border: 1px;
+$geometry-border-type: solid;
+$geometry-border-radius: 6px;
+$geometry-border-color: #eee;
+$geometry-framed-padding: 6px;
+
+// ARROW -----------------------------------------------------------------------
+$arrow-border-bottom-color: #fff;
+$arrow-border-top-color: #fff;
+$arrow-border-right-color: #fff;
+$arrow-border-left-color: #fff;
