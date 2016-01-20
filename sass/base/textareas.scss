@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+form {
+  textarea:focus {
+    box-shadow: 0 0 16px -5px #000000;
+    border: none;
+  }
+
+  textarea {
+    height: 105px;
+    padding: 10px 12px;
+  }
+}
