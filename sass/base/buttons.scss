@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  height: 38px;
+  height: 35px;
   padding: 0 $spacing;
   border: 0;
   border-radius: 4px;
@@ -10,11 +10,12 @@
   color: $color-text-strong-invert;
   background-color: $color-text;
   font-weight: 600;
-  font-size: 11px; // TODO: this should be a variable somewhere
+  font-size: 14px; // TODO: this should be a variable somewhere
   letter-spacing: .1rem;
   line-height: 38px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  vertical-align: middle;
   cursor: pointer;
 }

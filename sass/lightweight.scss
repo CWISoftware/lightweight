@@ -6,11 +6,16 @@
 
 @import 'base/utility';
 @import 'base/document';
+@import 'base/fieldsets';
 @import 'base/typography';
 @import 'base/grid';
+@import 'base/inputs';
+@import 'base/labels';
 @import 'base/links';
+@import 'base/selects';
 @import 'base/buttons';
 @import 'base/forms';
+@import 'base/textareas';
 
 @import 'components/geometry';
 @import 'components/arrow';
@@ -21,6 +26,7 @@
 @import 'components/card_profile';
 @import 'components/checkbox_toggle';
 @import 'components/counter_link';
+@import 'components/error';
 @import 'components/navbar';
 @import 'components/footer';
 @import 'components/notification';

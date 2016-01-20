@@ -6,3 +6,23 @@
     margin-bottom: 20px;
   }
 }
+
+.form-bordered {
+  border: 1px solid $color-border;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+form {
+  .form-group {
+    margin-bottom: 15px;
+    line-height: normal;
+  }
+}
+
+.form-inline {
+  .form-group {
+    display: inline-block;
+    margin: 0;
+  }
+}
