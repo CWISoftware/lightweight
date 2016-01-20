@@ -53,6 +53,12 @@
         text-align: center;
         margin: 20px 0 0 0;
         display: block;
+
+        a {
+          font-size: 1.8rem;
+          color: #0094c6;
+          text-decoration: none;
+        }
       }
 
       &__subtitle {
@@ -92,6 +98,9 @@
       }
   
       &__statistic {
+        border-top: 1px solid #005e76;
+        margin: 0 -20px;
+        padding: 0 20px;
         height: 45px;
         display: block;
 
