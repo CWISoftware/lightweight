@@ -1,0 +1,18 @@
+.extra-info {
+  * {
+    text-align: center;
+    display: block;
+    color: $color-button-default;
+  }
+
+  &__value{
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+}

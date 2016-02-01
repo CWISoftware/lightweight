@@ -1,0 +1,12 @@
+ul.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+
+  > li {
+    display: inline-block;
+    margin-right: 30px;
+    float: left;
+  }
+}
