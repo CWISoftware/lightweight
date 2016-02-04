@@ -1,0 +1,40 @@
+@charset 'utf-8';
+
+label {
+  display: block;
+  max-width: 100%;
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: normal;
+}
+
+.checkbox {
+  label {
+    input {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    position: relative;
+    padding-left: 20px;
+  }
+}
+
+.form-inline {
+  label {
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+}
+
+.form-horizontal {
+  label {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+form {
+  select {
+    display: block;
+    font-weight: 300;
+    height: 35px;
+    line-height: 34px;
+    background: white;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    width: 100%;
+  }
+}
+
+.form-inline {
+  select {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+}
+
+.form-horizontal {
+  select {
+    display: inline-block;
+    width: auto;
+  }
+}
