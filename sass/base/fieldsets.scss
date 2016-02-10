@@ -1,15 +1,17 @@
 @charset 'utf-8';
 
 fieldset {
-  padding: 15px;
-  box-sizing: border-box;
+  background-color: white;
   border: 1px solid $color-border;
   border-radius: 7px;
+  box-sizing: border-box;
+  padding: 15px;
 
   legend {
-    padding: 5px 10px;
+    background-color: white;
     border: 1px solid $color-border;
     border-radius: 4px;
     font-weight: 600;
+    padding: 5px 10px;
   }
 }

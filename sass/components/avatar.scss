@@ -3,10 +3,16 @@
 .avatar {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  max-width: 200px;
+  width: 100%;
   background-size: cover;
   vertical-align: middle;
+}
+
+.avatar:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
 }
 
 .avatar--small {

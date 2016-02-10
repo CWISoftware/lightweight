@@ -1,9 +1,5 @@
 @charset 'utf-8';
 
-.text-center {
-  text-align: center;
-}
-
 .page-header {
   padding: 24px 0;
   position: relative;
@@ -14,4 +10,10 @@
     vertical-align: middle;
     margin: 0 15px 0 0;
   }
+}
+
+.clear:after {
+  clear: both;
+  content: '';
+  display: inline-block;
 }
