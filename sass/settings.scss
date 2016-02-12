@@ -1,5 +1,11 @@
 @charset 'utf-8';
 
+$color-white: #fff;
+
+$color-blue-first: #005e7c;
+$color-blue-second: #0094c6;
+
+
 $color-default-card-placeholder: #ff3b7f;
 
 // COLORS ----------------------------------------------------------------------
@@ -28,7 +34,8 @@ $color-call-for-action: #0094c6;
 $color-overlay: rgba(0, 0, 0, .6);
 $color-autofill-input: #25261b;
 
-$color-button-default: #005E7C;
+$color-button-default: #0094c6;
+$color-button-text-default: #fff;
 
 // GRID ------------------------------------------------------------------------
 $grid-gutter: 30px;

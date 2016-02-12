@@ -23,11 +23,23 @@
     @include respond-above('large') {
       @include make-grid-column(3);
     }
+      
+    &__spacer {
+      height: 20px;
+      display: block;
+    }
 
     &__container {
+      width: 100%;
       padding: 0 20px;
       border-radius: 4px;
       background: #fff;
+      display: inline-block;
+
+      &__spacer {
+        height: 20px;
+        display: block;
+      }
 
       &__path {
         height: 40px;
@@ -154,33 +166,6 @@
       top: 50%;
       margin-top: -20px;
       position: absolute;
-    }
-  }
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-
-  &__title {
-    padding: 20px 0;
-  }
-
-  &--profile {
-    padding: 40px 20px 20px;
-  }
-
-  &--extra-infos {
-    padding: 12px 12px 12px 25px;
-    display: table;
-    width: 100%;
-
-    .button {
-      margin-left: 4px;
-      line-height: 42px;
-      height: 42px;
     }
   }
 }

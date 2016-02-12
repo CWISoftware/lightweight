@@ -4,6 +4,7 @@
   min-height: $navbar-height;
   color: $navbar-font-color;
   background-color: $navbar-background-color;
+  margin-bottom: 20px;
   @include clearfix();
 
   .container {

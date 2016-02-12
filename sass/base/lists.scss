@@ -1,4 +1,5 @@
 ul.list-inline {
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -6,7 +7,14 @@ ul.list-inline {
 
   > li {
     display: inline-block;
-    margin-right: 30px;
     float: left;
+
+    span {
+      font-size: 1.4rem;
+      line-height: 2.6rem;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+    }
   }
 }
